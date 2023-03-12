@@ -1,12 +1,23 @@
-p {
-    margin: 0;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
+html {
+    /* background: linear-gradient(blue, pink); */
+    background: linear-gradient(rgb(193, 193, 209), rgb(213, 185, 190));
+    height: 100%;
 }
 
 main {
     display: flex;
     width: 100%;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.dropdown__img {
+    margin: 5px 0 5px 0;
 }
 
 .dropdown__text {
@@ -17,8 +28,14 @@ main {
     gap: 20px;
 }
 
+.cros__img {
+    transition: 1s;
+}
+
 h2 {
     margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: calc(16px + (10-5) * ((100vw - 320px) / (1200-320)));
 }
 
 li {
@@ -36,6 +53,8 @@ ul {
 
 .accordion {
     height: 50px;
+    padding-top: 5px;
+    border-top: solid rgba(18, 11, 12, 0.106) 1px;
     transition: 1s;
     cursor: pointer;
 }
@@ -45,6 +64,10 @@ ul {
     text-align: center;
     overflow: hidden;
     transition: 1s;
+}
+
+.accordion:hover .dropdown__text>img {
+    transform: rotate(45deg);
 }
 
 .accordion:hover .dropdown {
@@ -66,10 +89,60 @@ li:focus {
 }
 
 li:focus .dropdown__text>img {
-    background-color: rgb(136, 42, 42);
+    transform: rotate(45deg);
 }
 
-li:focus {
-    outline: none;
-    height: 550px;
+.glow {
+    text-align: center;
+    margin: 0;
+    font-size: calc(35px + (30-20) * ((100vw - 320px) / (1200-320)));
+    color: #ffffffbd;
+    cursor: default;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 2px #ffffffbd, 0 0 4px #ffffffbd, 0 0 6px #df3289, 0 0 8px #df3289,
+            0 0 10px #df3289, 0 0 12px #df3289, 0 0 14px #df3289;
+    }
+
+    to {
+        text-shadow: 0 0 18px #ffffffbd, 0 0 20px #b3457c, 0 0 22px #b3457c,
+            0 0 24px #b3457c, 0 0 26px #b3457c, 0 0 28px #b3457c;
+    }
+}
+
+@media (max-width: 560px) {
+    .cros__img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .dropdown__img {
+        width: 40%;
+    }
+
+    .accordion:hover {
+        height: 250px;
+    }
+
+    li:focus {
+        outline: none;
+        height: 250px;
+    }
+}
+
+@media (max-width: 420px) {
+    .accordion:hover {
+        height: 200px;
+    }
+
+    li:focus {
+        outline: none;
+        height: 200px;
+    }
 }
