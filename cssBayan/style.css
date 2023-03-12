@@ -1,0 +1,14 @@
+main {
+    display: flex;
+    width: 100%;
+}
+
+#bayan {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bayan__target {
+    display: flex;
+    font-size: 20px;
+}
