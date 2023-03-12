@@ -1,3 +1,9 @@
+p {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
 main {
     display: flex;
     width: 100%;
@@ -8,7 +14,68 @@ main {
     margin: 0 auto;
 }
 
-.bayan__target {
-    display: flex;
-    font-size: 20px;
+.accordion {
+    position: relative;
+    height: 500px;
 }
+
+.dropdown {
+    position: absolute;
+    height: 0%;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.accordion:hover .dropdown {
+    height: 100%;
+}
+
+.accordion:hover {
+    /* height: 100%; */
+}
+
+
+
+/* .dropdown:hover .dropbtn {
+   
+} */
+
+
+
+
+
+
+
+
+/* .dropbtn {
+    cursor: pointer;
+}
+
+.dropdown {
+    height: 100px;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    display: none;
+}
+
+.dropdown-content {
+    display: none;
+    animation-name: example;
+    animation-duration: 1s;
+} */
+
+/* .visible {
+    display: block;
+    animation-name: example;
+    animation-duration: 1s;
+} */
